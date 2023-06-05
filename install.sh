@@ -22,8 +22,9 @@ source $HOME/.nix-profile/etc/profile.d/nix.sh
 (
     # Install packages with apt
     sudo apt update
-    sudo apt install -yq cowsay sl tmux
+    sudo apt install -yq tmux exa
     pnpm i -g vercel
+    pnpm i -g npm-check-updates
 
     # Auth Vercel
     echo vercel --token $VERCEL_TOKEN_DOTFILES

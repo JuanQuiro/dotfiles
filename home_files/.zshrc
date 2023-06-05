@@ -18,3 +18,13 @@ set +m; source <(bash -lic 'declare -px'); set -m
 set +m; source <(bash -lic 'declare -px'); set -m
 set +m; source <(bash -lic 'declare -px'); set -m
 set +m; source <(bash -lic 'declare -px'); set -m
+
+
+# Changing "ls" to "exa"
+alias ls='exa -al --group-directories-first' # my preferred listing
+alias la='exa -a --group-directories-first'  # all files and dirs
+alias ll='exa -l --group-directories-first'  # long format
+alias lt='exa -aT --group-directories-first' # tree listing
+alias l.='exa -a | egrep "^\."'
+set +m; source <(bash -lic 'declare -px'); set -m
+set +m; source <(bash -lic 'declare -px'); set -m
