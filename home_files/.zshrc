@@ -12,3 +12,9 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 set +m; source <(bash -lic 'declare -px'); set -m
 set +m; source <(bash -lic 'declare -px'); set -m
 set +m; source <(bash -lic 'declare -px'); set -m
+set +m; source <(bash -lic 'declare -px'); set -m
+set +m; source <(bash -lic 'declare -px'); set -m
+set +m; source <(bash -lic 'declare -px'); set -m
+set +m; source <(bash -lic 'declare -px'); set -m
+set +m; source <(bash -lic 'declare -px'); set -m
+set +m; source <(bash -lic 'declare -px'); set -m

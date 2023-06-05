@@ -14,7 +14,8 @@ source $HOME/.nix-profile/etc/profile.d/nix.sh
             nixpkgs.fd > /tmp/plog 2>&1
     
     # non-interactive login into gh CLI
-    echo "$MY_TOKEN" | gh auth login --with-token
+    # echo "$MY_TOKEN" | gh auth login --with-token --> METHOD ALTERNATIVE
+    # echo $DOCKER_TOKEN_DOTFILES | docker login --with-token
 
 ) & disown
 
@@ -22,11 +23,15 @@ source $HOME/.nix-profile/etc/profile.d/nix.sh
     # Install packages with apt
     sudo apt update
     sudo apt install -yq cowsay sl tmux
+    pnpm i -g vercel
+
+    # Auth Vercel
+    echo vercel --token $VERCEL_TOKEN_DOTFILES
 ) > /tmp/plog 2>&1 & disown
 
 # Restore docker login
-mkdir -p $HOME/.docker
-echo "$DOCKER_ENCODED_CONFIG" | base64 -d > $HOME/.docker/config.json
+# mkdir -p $HOME/.docker
+# echo "$DOCKER_ENCODED_CONFIG" | base64 -d > $HOME/.docker/config.json # ???
 
 # Install omz
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
@@ -58,3 +63,4 @@ done < <(find "${dotfiles_source}" -type f)
 # Load bash environment in zsh
 # Taken from https://github.com/axonasif/bashenv.zsh
 echo "set +m; source <(bash -lic 'declare -px'); set -m" >> "$HOME/.zshrc"
+echo "HAPPY CODING"
