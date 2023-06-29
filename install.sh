@@ -11,6 +11,7 @@ source $HOME/.nix-profile/etc/profile.d/nix.sh
             nixpkgs.google-cloud-sdk \
             nixpkgs.fzf \
             nixpkgs.bat \
+            nixpkgs.deno \
             nixpkgs.fd > /tmp/plog 2>&1
     
     # non-interactive login into gh CLI
